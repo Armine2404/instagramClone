@@ -1,10 +1,11 @@
 <template>
     <div>
+    
        <button 
        @click="followUser"
        class="btn btn-primary btn-sm ml-4" 
        v-text = "buttonText" 
-       :class= "[buttonText === 'Follow' ? 'green' : 'red']" >Follow</button>
+       :class= "[buttonText === 'Follow' ? 'green' : 'red']" >Follow</button>  
       
     </div>
 </template>
@@ -20,6 +21,7 @@
      data: function () {
          return{
              status: this.follows,
+             newCat: ''
          }
      },
      methods:{
@@ -31,6 +33,11 @@
             .catch(errors =>{              
                     window.location = '/login';
             })
+         },
+         deleteList(index){
+       
+           this.$delete(this.cats, index)
+           
          }
      },
      computed: {

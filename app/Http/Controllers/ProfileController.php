@@ -7,17 +7,20 @@ use Illuminate\Http\Request;
 
 class ProfileController extends Controller
 {
-    // public function index($user)
-    // {
-    //     $user = User::find($user);
- 
-    //     return view('profiles.index', ['user' => $user]);
-    // }
+  
     public function index(User $user)
     {
        $follows = (auth()->user()) ? auth()->user()->following->contains($user->id) : false;
+
+       $countPosts = $user->posts->count();
+
+       $countFollowers = $user->profile->followers->count();
+
+       $countFollowing = $user->following->count();
+
+
   
-        return view('profiles.index', compact('user','follows'));
+        return view('profiles.index', compact('user','follows', 'countPosts', 'countFollowers', 'countFollowing'));
     }
     public function edit(User $user)
     { 

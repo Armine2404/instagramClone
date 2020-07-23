@@ -1919,6 +1919,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: ['userId', 'follows'],
   mounted: function mounted() {
@@ -1926,7 +1927,8 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      status: this.follows
+      status: this.follows,
+      newCat: ''
     };
   },
   methods: {
@@ -1938,6 +1940,9 @@ __webpack_require__.r(__webpack_exports__);
       })["catch"](function (errors) {
         window.location = '/login';
       });
+    },
+    deleteList: function deleteList(index) {
+      this.$delete(this.cats, index);
     }
   },
   computed: {
@@ -50556,8 +50561,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! C:\Users\Usuario\instagram\resources\js\app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! C:\Users\Usuario\instagram\resources\sass\app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! C:\xampp\htdocs\dashboard\curso_php\instagram\instagramClone\resources\js\app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! C:\xampp\htdocs\dashboard\curso_php\instagram\instagramClone\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
